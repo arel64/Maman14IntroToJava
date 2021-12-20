@@ -41,8 +41,6 @@ public class Ex14 {
         System.out.println(search(s,16));//3,3
         System.out.println(search(s,35));//3,3
         System.out.println(search(s,7));//3,3*/
-        for(int i=1;i<100;i++)
-            System.out.println("The number "+i+"is "+isSpecial(i));
     }
 
     /**
@@ -242,5 +240,52 @@ public class Ex14 {
             by that much, we call the function again with n moved back the amount of items deleted, and iter increased.
         */
         return isSpecial(n - n/iter,iter+1);
+    }
+
+    /**
+     * This function will determine whether an (even numbered cell)array can be split into 2 groups of equal size,
+     * such as that the sum of the numbers in each group equals each other
+     * @param arr the array to split
+     * @return true if array is able to be split into 2 groups of equal sums and length
+     */
+    public static boolean equalSplit (int[] arr){
+        if(arr.length%2!=0) return false;
+        return equalSplit(arr,0,0,0,0,0);
+    }
+
+    /**
+     * This function will determine whether an (even numbered cell)array can be split into 2 groups of equal size,
+     * such as that the sum of the numbers in each group equals each other
+     * @param arr the array to split
+     * @param index index to check from(any indexes before this will be ignored)
+     * @param sumA offset for group A
+     * @param lenA initial length for group A
+     * @param sumB offset for group B
+     * @param lenB initial length for group B
+     * @return true if array is able to split into 2 groups of equal sums(plus offset) and length(plus initial)
+     */
+    public static boolean equalSplit (int[] arr,int index,int sumA,int lenA,int sumB,int lenB){
+        if(index > (arr.length -1)){
+            /*
+                Here the index is at its limit and we must return a definitive answer,
+                We check if this specific track is valid
+                1) The sum of both groups must match
+                2) The length of both groups must match
+             */
+            return (sumA == sumB) &&
+                        ( lenA == lenB );
+        }
+        //We get here if we are not done splitting the array(there are values left)
+
+        /*
+            At each non-final index we have 2 choices, as any number must belong to exactly one group,
+            Either we add the number to SumA and increase its length, or we do the same for Sum B
+            By definition we can't ignore any number, and we can't use it in both sums
+
+            That leaves us with exactly 2 option which we'll both check in the return statment.
+         */
+        return      equalSplit(arr,index+1,sumA+arr[index],lenA+1,sumB,lenB)||
+                        equalSplit(arr,index+1,sumA,lenA,sumB+arr[index],lenB+1);
+
     }
 }
