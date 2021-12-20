@@ -87,6 +87,13 @@ public class Ex14 {
 
     /**
      * This will search the array for a specific number
+     *
+     * As documented inside the function, this process will use a similar method to the classic binary search,
+     * with the main difference being that each iteration will split the array twice(instead of one split per iteration)
+     * This will result in a O(log2(N)) efficiency similarly to binary search
+     * Note: splitting the array which does not change the efficiency relative to binary search as we twice
+     *       the amount of actions per iteration(2 splits instead of 1) but for half the iterations
+     *
      * @param mat square, nxn that is "cycle sorted"
      * @param num number to find in array
      * @return true if number exists
