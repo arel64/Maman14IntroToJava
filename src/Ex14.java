@@ -1,47 +1,11 @@
+
+/**
+ * This Class is a container class for various functions
+ * @author Arel Sharon
+ * @version 1.0
+ * @since 09/01/2022
+ */
 public class Ex14 {
-    public static void main(String[] args) {
-        int[] a = {1,3,5,4,8,2,4,3,6,5};
-        int[] b = {3,3,2,3,3,3,2,2,2,3};
-        int[] c = {3};
-        int[] d = {4};
-        int[][] s = {
-            {1,3,8,9},
-            {6,4,15,11},
-                {36,50,21,22},
-                {60,55,30,26}
-        };
-      /*  System.out.println(search(s,1)); //false
-        System.out.println(search(s,3)); //0,0
-        System.out.println(search(s,7));//false
-        System.out.println(search(s,9));//2,0
-
-        System.out.println(search(s,6));//3,3
-        System.out.println(search(s,4)); //false
-        System.out.println(search(s,15)); //0,0
-        System.out.println(search(s,11));//false
-
-        System.out.println(search(s,36));//2,0
-        System.out.println(search(s,50));//3,3
-        System.out.println(search(s,21)); //false
-        System.out.println(search(s,22)); //0,0
-        System.out.println(search(s,60));//false
-
-        System.out.println(search(s,55));//2,0
-        System.out.println(search(s,30));//3,3
-        System.out.println(search(s,26));//3,3
-*/
-
-        //System.out.println(search(s,0));//3,3
-       /* System.out.println(search(s,2));//3,3
-        System.out.println(search(s,5));//3,3
-        System.out.println(search(s,29));//3,3
-        System.out.println(search(s,27));//3,3
-        System.out.println(search(s,61));//3,3
-        System.out.println(search(s,20));//3,3
-        System.out.println(search(s,16));//3,3
-        System.out.println(search(s,35));//3,3
-        System.out.println(search(s,7));//3,3*/
-    }
 
     /**
      * For every number that matches either one(or both) of the parameter numbers we will update its latest index
@@ -199,24 +163,6 @@ public class Ex14 {
         //The value was not found in the array, return false
         return false;
     }
-
-    /*public static boolean equalSplit (int[] arr){
-        return equalSplit(arr,1);
-    }
-
-    public static boolean equalSplit (int[] arr,int n){
-        if(n>arr.length/2 || n<1){
-            return false;
-        }
-
-
-        //Now we need to check if exists an n sized group
-        return equalSplit(arr,n+1);
-    }
-    public static int equalSplit (int[] arr,int ,){
-        //Now we need to check if exists an n sized group
-        return  || equalSplit(arr,n+1);
-    }*/
 
     /**
      * Returns whether the number is special number
