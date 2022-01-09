@@ -109,20 +109,7 @@ public class Ex14 {
             /*
                 If any of these numbers match num, end
              */
-            if(bottomTop==num){
-                System.out.println(row+","+col);
-                return true;
-            }
-            if(leftRightBigger ==num){
-                System.out.println(row+","+minWidth);
-                return true;
-            }
-
-            if(leftRightSmaller ==num){
-                System.out.println(maxHeight - 1+","+col);
-                return true;
-            }
-
+            if(bottomTop==num || leftRightBigger ==num || leftRightSmaller ==num) return true;
             /*
                 Using the biggest numbers from 3 squares we:
                 1) Use bottomTop to check if num is at the top or bottom side of the array
@@ -170,6 +157,7 @@ public class Ex14 {
      * @return true if the number is a special number
      */
     public static boolean isSpecial (int n){
+        if(n<1) return false;
         return isSpecial(n,2);
     }
 
